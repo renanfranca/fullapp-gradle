@@ -4,6 +4,17 @@ spring:
   threads:
     virtual:
       enabled: true
+  task:
+    scheduling:
+      thread-name-prefix: fullapp-scheduling-
+      pool:
+        size: 2
+    execution:
+      pool:
+        keep-alive: 10s
+        queue-capacity: 100
+        max-size: 16
+      thread-name-prefix: fullapp-task-
 logging:
   level:
     tech:
