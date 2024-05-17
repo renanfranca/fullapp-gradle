@@ -6,6 +6,7 @@ bundles = {}
 	mockito = "5.12.0"
 	checkstyle = "10.16.0"
 	junit-jupiter = "5.10.2"
+	approvaltests = "24.1.0"
 
 	[libraries.junit-params]
 		name = "junit-jupiter-params"
@@ -34,3 +35,10 @@ bundles = {}
 
 		[libraries.mockito.version]
 			ref = "mockito"
+
+	[libraries.approvaltests]
+		name = "approvaltests"
+		group = "com.approvaltests"
+
+		[libraries.approvaltests.version]
+			ref = "approvaltests"
