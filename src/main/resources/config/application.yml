@@ -15,6 +15,11 @@ spring:
         queue-capacity: 100
         max-size: 16
       thread-name-prefix: fullapp-task-
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: false
 logging:
   level:
     tech:

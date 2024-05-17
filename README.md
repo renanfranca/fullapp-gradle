@@ -45,5 +45,6 @@ docker compose -f src/main/docker/sonar.yml up -d
 - [sonar](documentation/sonar.md)
 - [Rest pagination](documentation/rest-pagination.md)
 - [Jpa pages](documentation/jpa-pages.md)
+- [Dev tools](documentation/dev-tools.md)
 
 <!-- jhipster-needle-documentation -->

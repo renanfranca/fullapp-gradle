@@ -3,3 +3,9 @@ logging:
     tech:
       jhipster:
         fullapp: DEBUG
+spring:
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
