@@ -167,6 +167,8 @@ dependencies {
   implementation(libs.caffeine)
   implementation(libs.spring.boot.starter.security)
   implementation(libs.jjwt.api)
+  implementation(libs.springdoc.openapi.starter.webmvc.ui)
+  implementation(libs.springdoc.openapi.starter.webmvc.api)
   // jhipster-needle-gradle-implementation-dependencies
   // jhipster-needle-gradle-compile-dependencies
   runtimeOnly(libs.spring.boot.devtools)
