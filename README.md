@@ -52,5 +52,6 @@ docker compose -f src/main/docker/sonar.yml up -d
 - [JWT basic auth](documentation/jwt-basic-auth.md)
 - [Cucumber](documentation/cucumber.md)
 - [Cucumber authentication](documentation/cucumber-authentication.md)
+- [Hexagonal architecture](documentation/hexagonal-architecture.md)
 
 <!-- jhipster-needle-documentation -->
