@@ -183,6 +183,10 @@ dependencies {
   testImplementation(libs.reflections)
   testImplementation(libs.archunit.junit5.api)
   testImplementation(libs.spring.security.test)
+  testImplementation(libs.cucumber.junit.platform.engine)
+  testImplementation(libs.cucumber.java)
+  testImplementation(libs.cucumber.spring)
+  testImplementation(libs.junit.platform.suite)
   // jhipster-needle-gradle-test-dependencies
 }
 

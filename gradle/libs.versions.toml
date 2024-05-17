@@ -6,6 +6,7 @@ bundles = {}
 	protobuf-plugin = "0.9.4"
 	reflections = "0.10.2"
 	sonarqube = "4.4.1.3373"
+	cucumber = "7.17.0"
 	jacoco = "0.8.11"
 	mockito = "5.12.0"
 	os-maven-plugin = "1.7.1"
@@ -103,6 +104,13 @@ bundles = {}
 		name = "spring-boot-devtools"
 		group = "org.springframework.boot"
 
+	[libraries.cucumber-java]
+		name = "cucumber-java"
+		group = "io.cucumber"
+
+		[libraries.cucumber-java.version]
+			ref = "cucumber"
+
 	[libraries.jjwt-jackson]
 		name = "jjwt-jackson"
 		group = "io.jsonwebtoken"
@@ -121,6 +129,10 @@ bundles = {}
 		[libraries.jjwt-impl.version]
 			ref = "json-web-token"
 
+	[libraries.junit-platform-suite]
+		name = "junit-platform-suite"
+		group = "org.junit.platform"
+
 	[libraries.protobuf-java-util]
 		name = "protobuf-java-util"
 		group = "com.google.protobuf"
@@ -131,6 +143,13 @@ bundles = {}
 	[libraries.spring-security-test]
 		name = "spring-security-test"
 		group = "org.springframework.security"
+
+	[libraries.cucumber-junit-platform-engine]
+		name = "cucumber-junit-platform-engine"
+		group = "io.cucumber"
+
+		[libraries.cucumber-junit-platform-engine.version]
+			ref = "cucumber"
 
 	[libraries.archunit-junit5-api]
 		name = "archunit-junit5-api"
@@ -193,3 +212,10 @@ bundles = {}
 
 		[libraries.commons-lang3.version]
 			ref = "commons-lang3"
+
+	[libraries.cucumber-spring]
+		name = "cucumber-spring"
+		group = "io.cucumber"
+
+		[libraries.cucumber-spring.version]
+			ref = "cucumber"

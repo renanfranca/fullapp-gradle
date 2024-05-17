@@ -50,5 +50,6 @@ docker compose -f src/main/docker/sonar.yml up -d
 - [Application errors](documentation/application-errors.md)
 - [Caffeine](documentation/caffeine.md)
 - [JWT basic auth](documentation/jwt-basic-auth.md)
+- [Cucumber](documentation/cucumber.md)
 
 <!-- jhipster-needle-documentation -->
