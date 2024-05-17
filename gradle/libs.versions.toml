@@ -102,6 +102,10 @@ bundles = {}
 		name = "caffeine"
 		group = "com.github.ben-manes.caffeine"
 
+	[libraries.hibernate-jcache]
+		name = "hibernate-jcache"
+		group = "org.hibernate.orm"
+
 	[libraries.postgresql]
 		name = "postgresql"
 		group = "org.postgresql"

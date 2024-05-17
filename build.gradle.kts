@@ -175,6 +175,7 @@ dependencies {
   implementation(libs.liquibase.core)
   implementation(libs.cache.api)
   implementation(libs.ehcache)
+  implementation(libs.hibernate.jcache)
   // jhipster-needle-gradle-implementation-dependencies
   // jhipster-needle-gradle-compile-dependencies
   runtimeOnly(libs.spring.boot.devtools)
