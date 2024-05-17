@@ -7,3 +7,5 @@ logging:
       jhipster:
         fullapp: 'OFF'
   config: classpath:logback.xml
+server:
+  port: 0

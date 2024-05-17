@@ -9,3 +9,5 @@ logging:
     tech:
       jhipster:
         fullapp: INFO
+server:
+  port: 8081
