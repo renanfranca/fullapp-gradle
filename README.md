@@ -44,5 +44,6 @@ docker compose -f src/main/docker/sonar.yml up -d
 - [CORS configuration](documentation/cors-configuration.md)
 - [sonar](documentation/sonar.md)
 - [Rest pagination](documentation/rest-pagination.md)
+- [Jpa pages](documentation/jpa-pages.md)
 
 <!-- jhipster-needle-documentation -->
