@@ -105,6 +105,10 @@ bundles = {}
 		name = "spring-boot-starter-web"
 		group = "org.springframework.boot"
 
+	[libraries.caffeine]
+		name = "caffeine"
+		group = "com.github.ben-manes.caffeine"
+
 	[libraries.protobuf-java]
 		name = "protobuf-java"
 		group = "com.google.protobuf"

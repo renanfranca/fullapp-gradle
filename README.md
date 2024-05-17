@@ -47,5 +47,6 @@ docker compose -f src/main/docker/sonar.yml up -d
 - [Jpa pages](documentation/jpa-pages.md)
 - [Dev tools](documentation/dev-tools.md)
 - [Application errors](documentation/application-errors.md)
+- [Caffeine](documentation/caffeine.md)
 
 <!-- jhipster-needle-documentation -->

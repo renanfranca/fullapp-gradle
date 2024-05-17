@@ -164,6 +164,7 @@ dependencies {
   implementation(libs.spring.boot.starter.actuator)
   implementation(libs.logstash.logback.encoder)
   implementation(libs.spring.boot.starter.cache)
+  implementation(libs.caffeine)
   // jhipster-needle-gradle-implementation-dependencies
   // jhipster-needle-gradle-compile-dependencies
   runtimeOnly(libs.spring.boot.devtools)
