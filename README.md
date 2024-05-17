@@ -60,5 +60,6 @@ docker compose -f src/main/docker/postgresql.yml up -d
 - [Postgresql](documentation/postgresql.md)
 - [Kipe expression](documentation/kipe-expression.md)
 - [Kipe authorization](documentation/kipe-authorization.md)
+- [Sample](documentation/sample.md)
 
 <!-- jhipster-needle-documentation -->
