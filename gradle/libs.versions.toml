@@ -82,6 +82,10 @@ bundles = {}
 		[libraries.archunit-junit5-api.version]
 			ref = "archunit-junit5"
 
+	[libraries.spring-boot-starter-cache]
+		name = "spring-boot-starter-cache"
+		group = "org.springframework.boot"
+
 	[libraries.approvaltests]
 		name = "approvaltests"
 		group = "com.approvaltests"
