@@ -129,3 +129,4 @@ Desktop.ini
 /build/
 # JQwik
 .jqwik-database
+infinitest.filters
