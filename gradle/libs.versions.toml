@@ -2,6 +2,7 @@ bundles = {}
 
 [versions]
 	protobuf = "4.26.1"
+	jib = "3.4.2"
 	protobuf-plugin = "0.9.4"
 	reflections = "0.10.2"
 	sonarqube = "4.4.1.3373"
@@ -22,6 +23,12 @@ bundles = {}
 
 		[plugins.protobuf.version]
 			ref = "protobuf-plugin"
+
+	[plugins.jib]
+		id = "com.google.cloud.tools.jib"
+
+		[plugins.jib.version]
+			ref = "jib"
 
 	[plugins.sonarqube]
 		id = "org.sonarqube"
