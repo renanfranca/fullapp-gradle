@@ -43,5 +43,6 @@ docker compose -f src/main/docker/sonar.yml up -d
 - [Logs Spy](documentation/logs-spy.md)
 - [CORS configuration](documentation/cors-configuration.md)
 - [sonar](documentation/sonar.md)
+- [Rest pagination](documentation/rest-pagination.md)
 
 <!-- jhipster-needle-documentation -->
