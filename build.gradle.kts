@@ -2,6 +2,7 @@
 
 plugins {
   java
+  checkstyle
   // jhipster-needle-gradle-plugins
 }
 
@@ -12,6 +13,12 @@ java {
     languageVersion = JavaLanguageVersion.of(21)
   }
 }
+
+checkstyle {
+  configFile = rootProject.file("checkstyle.xml")
+  toolVersion = libs.versions.checkstyle.get()
+}
+
 // jhipster-needle-gradle-plugins-configurations
 
 repositories {
