@@ -166,6 +166,7 @@ dependencies {
   testImplementation(libs.protobuf.java.util)
   testImplementation(libs.spring.boot.starter.test)
   testImplementation(libs.reflections)
+  testImplementation(libs.archunit.junit5.api)
   // jhipster-needle-gradle-test-dependencies
 }
 
