@@ -12,6 +12,7 @@ bundles = {}
 	jqwik = "1.8.4"
 	assertj = "3.25.3"
 	spring-boot = "3.2.5"
+	logstash-logback-encoder = "7.4"
 	commons-lang3 = "3.14.0"
 	checkstyle = "10.16.0"
 	junit-jupiter = "5.10.2"
@@ -103,6 +104,13 @@ bundles = {}
 
 		[libraries.jqwik.version]
 			ref = "jqwik"
+
+	[libraries.logstash-logback-encoder]
+		name = "logstash-logback-encoder"
+		group = "net.logstash.logback"
+
+		[libraries.logstash-logback-encoder.version]
+			ref = "logstash-logback-encoder"
 
 	[libraries.commons-lang3]
 		name = "commons-lang3"

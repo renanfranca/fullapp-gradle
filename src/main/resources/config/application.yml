@@ -45,3 +45,12 @@ management:
       probes:
         enabled: true
       show-details: always
+application:
+  logging:
+    logstash:
+      tcp:
+        shutdown_grace_period: PT1M
+        enabled: false
+        ring-buffer-size: 8192
+        host: localhost
+        port: 5000
