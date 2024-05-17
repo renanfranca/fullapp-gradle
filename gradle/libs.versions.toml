@@ -90,6 +90,10 @@ bundles = {}
 		[libraries.springdoc-openapi-starter-webmvc-ui.version]
 			ref = "springdoc-openapi-starter-webmvc"
 
+	[libraries.ehcache]
+		name = "ehcache"
+		group = "org.ehcache"
+
 	[libraries.spring-boot-starter]
 		name = "spring-boot-starter"
 		group = "org.springframework.boot"
@@ -130,6 +134,10 @@ bundles = {}
 
 		[libraries.jjwt-jackson.version]
 			ref = "json-web-token"
+
+	[libraries.cache-api]
+		name = "cache-api"
+		group = "javax.cache"
 
 	[libraries.liquibase-core]
 		name = "liquibase-core"

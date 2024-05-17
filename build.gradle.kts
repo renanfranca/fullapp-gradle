@@ -173,6 +173,8 @@ dependencies {
   implementation(libs.hikariCP)
   implementation(libs.hibernate.core)
   implementation(libs.liquibase.core)
+  implementation(libs.cache.api)
+  implementation(libs.ehcache)
   // jhipster-needle-gradle-implementation-dependencies
   // jhipster-needle-gradle-compile-dependencies
   runtimeOnly(libs.spring.boot.devtools)
