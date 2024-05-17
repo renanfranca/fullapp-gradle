@@ -169,11 +169,15 @@ dependencies {
   implementation(libs.jjwt.api)
   implementation(libs.springdoc.openapi.starter.webmvc.ui)
   implementation(libs.springdoc.openapi.starter.webmvc.api)
+  implementation(libs.spring.boot.starter.data.jpa)
+  implementation(libs.hikariCP)
+  implementation(libs.hibernate.core)
   // jhipster-needle-gradle-implementation-dependencies
   // jhipster-needle-gradle-compile-dependencies
   runtimeOnly(libs.spring.boot.devtools)
   runtimeOnly(libs.jjwt.impl)
   runtimeOnly(libs.jjwt.jackson)
+  runtimeOnly(libs.postgresql)
   // jhipster-needle-gradle-runtime-dependencies
 
   testImplementation(libs.approvaltests)
@@ -187,6 +191,7 @@ dependencies {
   testImplementation(libs.cucumber.java)
   testImplementation(libs.cucumber.spring)
   testImplementation(libs.junit.platform.suite)
+  testImplementation(libs.testcontainers.postgresql)
   // jhipster-needle-gradle-test-dependencies
 }
 

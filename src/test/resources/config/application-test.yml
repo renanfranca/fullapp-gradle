@@ -6,6 +6,13 @@ spring:
       roles: ADMIN
       name: admin
       password: $2a$12$cRKS9ZURbdJIaRsKDTDUmOrH4.B.2rokv8rrkrQXr2IR2Hkna484O
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    username: fullapp
+    hikari:
+      maximum-pool-size: 2
+    url: jdbc:tc:postgresql:16.3:///fullapp?TC_TMPFS=/testtmpfs:rw
+    password: ''
 logging:
   level:
     tech:

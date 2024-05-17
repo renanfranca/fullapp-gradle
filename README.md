@@ -33,6 +33,10 @@ docker compose -f src/main/docker/sonar.yml up -d
 ./gradlew clean build sonar --info
 ```
 
+```bash
+docker compose -f src/main/docker/postgresql.yml up -d
+```
+
 
 <!-- jhipster-needle-startupCommand -->
 
@@ -53,5 +57,6 @@ docker compose -f src/main/docker/sonar.yml up -d
 - [Cucumber](documentation/cucumber.md)
 - [Cucumber authentication](documentation/cucumber-authentication.md)
 - [Hexagonal architecture](documentation/hexagonal-architecture.md)
+- [Postgresql](documentation/postgresql.md)
 
 <!-- jhipster-needle-documentation -->

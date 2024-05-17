@@ -4,6 +4,7 @@ bundles = {}
 	protobuf = "4.26.1"
 	jib = "3.4.2"
 	protobuf-plugin = "0.9.4"
+	testcontainers = "1.19.8"
 	reflections = "0.10.2"
 	sonarqube = "4.4.1.3373"
 	cucumber = "7.17.0"
@@ -67,6 +68,13 @@ bundles = {}
 		[libraries.spring-boot-dependencies.version]
 			ref = "spring-boot"
 
+	[libraries.testcontainers-postgresql]
+		name = "postgresql"
+		group = "org.testcontainers"
+
+		[libraries.testcontainers-postgresql.version]
+			ref = "testcontainers"
+
 	[libraries.approvaltests]
 		name = "approvaltests"
 		group = "com.approvaltests"
@@ -88,6 +96,10 @@ bundles = {}
 	[libraries.caffeine]
 		name = "caffeine"
 		group = "com.github.ben-manes.caffeine"
+
+	[libraries.postgresql]
+		name = "postgresql"
+		group = "org.postgresql"
 
 	[libraries.protobuf-java]
 		name = "protobuf-java"
@@ -162,6 +174,10 @@ bundles = {}
 		name = "spring-boot-starter-cache"
 		group = "org.springframework.boot"
 
+	[libraries.hibernate-core]
+		name = "hibernate-core"
+		group = "org.hibernate.orm"
+
 	[libraries.spring-boot-starter-actuator]
 		name = "spring-boot-starter-actuator"
 		group = "org.springframework.boot"
@@ -180,8 +196,16 @@ bundles = {}
 		[libraries.jjwt-api.version]
 			ref = "json-web-token"
 
+	[libraries.hikariCP]
+		name = "HikariCP"
+		group = "com.zaxxer"
+
 	[libraries.spring-boot-starter-web]
 		name = "spring-boot-starter-web"
+		group = "org.springframework.boot"
+
+	[libraries.spring-boot-starter-data-jpa]
+		name = "spring-boot-starter-data-jpa"
 		group = "org.springframework.boot"
 
 	[libraries.spring-boot-configuration-processor]
