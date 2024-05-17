@@ -165,9 +165,13 @@ dependencies {
   implementation(libs.logstash.logback.encoder)
   implementation(libs.spring.boot.starter.cache)
   implementation(libs.caffeine)
+  implementation(libs.spring.boot.starter.security)
+  implementation(libs.jjwt.api)
   // jhipster-needle-gradle-implementation-dependencies
   // jhipster-needle-gradle-compile-dependencies
   runtimeOnly(libs.spring.boot.devtools)
+  runtimeOnly(libs.jjwt.impl)
+  runtimeOnly(libs.jjwt.jackson)
   // jhipster-needle-gradle-runtime-dependencies
 
   testImplementation(libs.approvaltests)
@@ -176,6 +180,7 @@ dependencies {
   testImplementation(libs.spring.boot.starter.test)
   testImplementation(libs.reflections)
   testImplementation(libs.archunit.junit5.api)
+  testImplementation(libs.spring.security.test)
   // jhipster-needle-gradle-test-dependencies
 }
 

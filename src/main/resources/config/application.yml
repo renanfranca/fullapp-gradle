@@ -61,3 +61,5 @@ application:
         ring-buffer-size: 8192
         host: localhost
         port: 5000
+  security:
+    jwt-base64-secret: NmE2NDhmMmQ5OWQzYzk4NmE4NjNlMmQzNmU3ZTU4ZDY2MmUxOWEwZGI4YTk4NDY0MTk4MmQyMWZlNDNlM2FjYg==
