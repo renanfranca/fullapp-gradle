@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: Fullapp
+  threads:
+    virtual:
+      enabled: true
+logging:
+  level:
+    tech:
+      jhipster:
+        fullapp: INFO
