@@ -22,6 +22,9 @@
   <logger name="com.github.dockerjava" level="WARN" />
   <logger name="org.testcontainers" level="WARN" />
   <logger name="org.postgresql" level="WARN" />
+  <logger name="liquibase" level="WARN" />
+  <logger name="LiquibaseSchemaResolver" level="INFO" />
+  <logger name="com.zaxxer.hikari" level="WARN" />
   <!-- jhipster-needle-logback-add-log -->
 
   <root level="${log.level}">
