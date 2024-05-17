@@ -4,21 +4,28 @@ bundles = {}
 	protobuf = "4.26.1"
 	protobuf-plugin = "0.9.4"
 	reflections = "0.10.2"
-	jqwik = "1.8.4"
+	sonarqube = "4.4.1.3373"
 	jacoco = "0.8.11"
+	mockito = "5.12.0"
+	os-maven-plugin = "1.7.1"
+	approvaltests = "24.1.0"
+	jqwik = "1.8.4"
 	assertj = "3.25.3"
 	spring-boot = "3.2.5"
-	mockito = "5.12.0"
 	checkstyle = "10.16.0"
-	os-maven-plugin = "1.7.1"
 	junit-jupiter = "5.10.2"
-	approvaltests = "24.1.0"
 
 	[plugins.protobuf]
 		id = "com.google.protobuf"
 
 		[plugins.protobuf.version]
 			ref = "protobuf-plugin"
+
+	[plugins.sonarqube]
+		id = "org.sonarqube"
+
+		[plugins.sonarqube.version]
+			ref = "sonarqube"
 
 	[plugins.spring-boot]
 		id = "org.springframework.boot"
