@@ -1,3 +1,4 @@
+import com.github.gradle.node.npm.task.NpmTask
 // jhipster-needle-gradle-imports
 
 plugins {
@@ -9,9 +10,12 @@ plugins {
   alias(libs.plugins.sonarqube)
   alias(libs.plugins.jib)
   alias(libs.plugins.git.properties)
+  alias(libs.plugins.node.gradle)
   // jhipster-needle-gradle-plugins
 }
 
+val nodeVersionValue by extra("20.13.1")
+val npmVersionValue by extra("10.8.0")
 // jhipster-needle-gradle-properties
 
 java {
@@ -137,6 +141,42 @@ gitProperties {
   keys = listOf("git.branch", "git.commit.id.abbrev", "git.commit.id.describe", "git.build.version")
 }
 
+
+node {
+  download.set(true)
+  version.set(nodeVersionValue)
+  npmVersion.set(npmVersionValue)
+  workDir.set(file(layout.buildDirectory))
+  npmWorkDir.set(file(layout.buildDirectory))
+}
+
+val buildTaskUsingNpm = tasks.register<NpmTask>("buildNpm") {
+  description = "Build the frontend project using NPM"
+  group = "Build"
+  dependsOn("npmInstall")
+  npmCommand.set(listOf("run", "build"))
+  environment.set(mapOf("APP_VERSION" to project.version.toString()))
+}
+
+val testTaskUsingNpm = tasks.register<NpmTask>("testNpm") {
+  description = "Test the frontend project using NPM"
+  group = "verification"
+  dependsOn("npmInstall", "buildNpm")
+  npmCommand.set(listOf("run", "test:coverage"))
+  ignoreExitValue.set(false)
+  workingDir.set(projectDir)
+  execOverrides {
+    standardOutput = System.out
+  }
+}
+
+tasks.bootJar {
+  dependsOn("buildNpm")
+  from("build/classes/static") {
+      into("BOOT-INF/classes/static")
+  }
+}
+
 // jhipster-needle-gradle-plugins-configurations
 
 repositories {
@@ -209,6 +249,7 @@ tasks.test {
   }
   useJUnitPlatform()
   finalizedBy("jacocoTestCoverageVerification")
+  dependsOn("testNpm")
   // jhipster-needle-gradle-tasks-test
 }
 
