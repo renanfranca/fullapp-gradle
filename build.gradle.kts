@@ -42,12 +42,12 @@ jacoco {
 }
 
 tasks.jacocoTestReport {
-  dependsOn("test", "integrationTest", "cucumberTest")
+  dependsOn("test", "integrationTest")
   reports {
     xml.required.set(true)
     html.required.set(true)
   }
-  executionData.setFrom(fileTree(buildDir).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec", "**/jacoco/cucumberTest.exec"))
+  executionData.setFrom(fileTree(buildDir).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
 }
 
 tasks.jacocoTestCoverageVerification {
@@ -70,7 +70,7 @@ tasks.jacocoTestCoverageVerification {
           }
       }
   }
-  executionData.setFrom(fileTree(buildDir).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec", "**/jacoco/cucumberTest.exec"))
+  executionData.setFrom(fileTree(buildDir).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
 }
 
 
@@ -259,16 +259,7 @@ val integrationTest = task<Test>("integrationTest") {
   shouldRunAfter("test")
   filter {
     includeTestsMatching("**IT*")
-    excludeTestsMatching("**CucumberTest*")
-    excludeTestsMatching("**Test*")
+    includeTestsMatching("**CucumberTest*")
   }
   useJUnitPlatform()
-}
-
-val cucumberTest = task<Test>("cucumberTest") {
-    group = "verification"
-    description = "Run Cucumber tests"
-    shouldRunAfter("integrationTest")
-    include("**/CucumberTest*")
-    useJUnitPlatform()
 }
