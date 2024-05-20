@@ -127,6 +127,7 @@ Desktop.ini
 # Gradle Wrapper
 !gradle/wrapper/gradle-wrapper.jar
 /build/
+.gradle/
 # JQwik
 .jqwik-database
 infinitest.filters
