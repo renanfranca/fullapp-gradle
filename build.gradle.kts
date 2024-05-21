@@ -48,7 +48,7 @@ tasks.jacocoTestReport {
     xml.required.set(true)
     html.required.set(true)
   }
-  executionData.setFrom(fileTree(buildDir).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
+  executionData.setFrom(fileTree(layout.buildDirectory).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
 }
 
 tasks.jacocoTestCoverageVerification {
@@ -71,7 +71,7 @@ tasks.jacocoTestCoverageVerification {
           }
       }
   }
-  executionData.setFrom(fileTree(buildDir).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
+  executionData.setFrom(fileTree(layout.buildDirectory).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
 }
 
 
