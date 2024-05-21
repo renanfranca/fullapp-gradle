@@ -16,6 +16,7 @@ plugins {
 
 val nodeVersionValue by extra("20.13.1")
 val npmVersionValue by extra("10.8.0")
+val springProfilesActive by extra("")
 // jhipster-needle-gradle-properties
 
 java {
@@ -191,6 +192,9 @@ val profiles = (project.findProperty("profiles") as String? ?: "")
   .split(",")
   .map { it.trim() }
   .filter { it.isNotEmpty() }
+if (profiles.isEmpty() || profiles.contains("local")) {
+  apply(plugin = "profile-local")
+}
 // jhipster-needle-profile-activation
 
 dependencies {
@@ -237,6 +241,20 @@ dependencies {
   testImplementation(libs.junit.platform.suite)
   testImplementation(libs.testcontainers.postgresql)
   // jhipster-needle-gradle-test-dependencies
+}
+
+
+tasks.build {
+  dependsOn("processResources")
+}
+
+tasks.processResources {
+  filesMatching("**/*.yml") {
+    filter { it.replace("@spring.profiles.active@", springProfilesActive) }
+  }
+  filesMatching("**/*.properties") {
+    filter { it.replace("@spring.profiles.active@", springProfilesActive) }
+  }
 }
 
 // jhipster-needle-gradle-free-configuration-blocks

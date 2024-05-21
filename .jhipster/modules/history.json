@@ -727,5 +727,20 @@
       "kafkaClusterId" : "7870e9ec-dd1f-4562-86a2-df2199d5db1a",
       "springConfigurationFormat" : "yaml"
     }
+  }, {
+    "module" : "spring-boot-local-profile",
+    "date" : "2024-05-21T13:39:33.944020605Z",
+    "properties" : {
+      "date" : "2021-12-03T10:15:30.00Z",
+      "jwtBase64Secret" : "NmE2NDhmMmQ5OWQzYzk4NmE4NjNlMmQzNmU3ZTU4ZDY2MmUxOWEwZGI4YTk4NDY0MTk4MmQyMWZlNDNlM2FjYg==",
+      "kafkaClusterId" : "7870e9ec-dd1f-4562-86a2-df2199d5db1a",
+      "springConfigurationFormat" : "yaml",
+      "packageName" : "tech.jhipster.fullapp",
+      "projectName" : "Chips Project",
+      "serverPort" : 8081,
+      "baseName" : "fullapp",
+      "endOfLine" : "lf",
+      "indentSize" : 2
+    }
   } ]
 }
