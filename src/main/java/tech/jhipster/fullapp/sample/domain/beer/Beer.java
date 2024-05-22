@@ -1,7 +1,6 @@
 package tech.jhipster.fullapp.sample.domain.beer;
 
 import java.math.BigDecimal;
-
 import tech.jhipster.fullapp.sample.domain.Amount;
 import tech.jhipster.fullapp.sample.domain.BeerId;
 import tech.jhipster.fullapp.shared.error.domain.Assert;
@@ -54,7 +53,7 @@ public final class Beer {
     return sellingState;
   }
 
-  private static class BeerBuilder
+  private static final class BeerBuilder
     implements BeerIdBuilder, BeerNameBuilder, BeerUnitPriceBuilder, BeerSellStateBuilder, BeerOptionalBuilder {
 
     private BeerId id;

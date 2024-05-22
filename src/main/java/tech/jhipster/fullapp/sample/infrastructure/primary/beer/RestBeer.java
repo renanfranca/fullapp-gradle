@@ -1,12 +1,11 @@
 package tech.jhipster.fullapp.sample.infrastructure.primary.beer;
 
-import tech.jhipster.fullapp.sample.domain.beer.Beer;
-import tech.jhipster.fullapp.shared.error.domain.Assert;
-import java.math.BigDecimal;
-import java.util.UUID;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
+import java.math.BigDecimal;
+import java.util.UUID;
+import tech.jhipster.fullapp.sample.domain.beer.Beer;
+import tech.jhipster.fullapp.shared.error.domain.Assert;
 
 @Schema(name = "beer", description = "A beer")
 final class RestBeer {
@@ -42,7 +41,7 @@ final class RestBeer {
     return unitPrice;
   }
 
-  private static class RestBeerBuilder {
+  private static final class RestBeerBuilder {
 
     private UUID id;
     private String name;

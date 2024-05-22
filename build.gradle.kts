@@ -1,4 +1,5 @@
 import com.github.gradle.node.npm.task.NpmTask
+import java.util.Properties
 // jhipster-needle-gradle-imports
 
 plugins {
@@ -16,6 +17,7 @@ plugins {
 
 val nodeVersionValue by extra("20.13.1")
 val npmVersionValue by extra("10.8.0")
+val springProfilesActive by extra("")
 // jhipster-needle-gradle-properties
 
 java {
@@ -47,7 +49,7 @@ tasks.jacocoTestReport {
     xml.required.set(true)
     html.required.set(true)
   }
-  executionData.setFrom(fileTree(buildDir).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
+  executionData.setFrom(fileTree(layout.buildDirectory).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
 }
 
 tasks.jacocoTestCoverageVerification {
@@ -70,7 +72,7 @@ tasks.jacocoTestCoverageVerification {
           }
       }
   }
-  executionData.setFrom(fileTree(buildDir).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
+  executionData.setFrom(fileTree(layout.buildDirectory).include("**/jacoco/test.exec", "**/jacoco/integrationTest.exec"))
 }
 
 
@@ -81,22 +83,16 @@ springBoot {
 }
 
 
-fun loadSonarProperties(): Map<String, List<String>> {
-    val properties = mutableMapOf<String, List<String>>()
-    File("sonar-project.properties").forEachLine { line ->
-        if (!line.startsWith("#") && line.contains("=")) {
-            val (key, value) = line.split("=", limit = 2)
-            properties[key.trim()] = value.split(",").map { it.trim() }
-        }
-    }
-    return properties
+val sonarProperties = Properties()
+File("sonar-project.properties").inputStream().use { inputStream ->
+    sonarProperties.load(inputStream)
 }
 
 sonarqube {
     properties {
-      loadSonarProperties().forEach { (key, value) ->
-        property(key, value)
-      }
+      sonarProperties
+        .map { it -> it.key as String to (it.value as String).split(",").map { it.trim() } }
+        .forEach { (key, values) -> property(key, values) }
       property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml")
       property("sonar.junit.reportPaths", "build/test-results/test,build/test-results/integrationTest")
     }
@@ -191,6 +187,9 @@ val profiles = (project.findProperty("profiles") as String? ?: "")
   .split(",")
   .map { it.trim() }
   .filter { it.isNotEmpty() }
+if (profiles.isEmpty() || profiles.contains("local")) {
+  apply(plugin = "profile-local")
+}
 // jhipster-needle-profile-activation
 
 dependencies {
@@ -239,6 +238,20 @@ dependencies {
   // jhipster-needle-gradle-test-dependencies
 }
 
+
+tasks.build {
+  dependsOn("processResources")
+}
+
+tasks.processResources {
+  filesMatching("**/*.yml") {
+    filter { it.replace("@spring.profiles.active@", springProfilesActive) }
+  }
+  filesMatching("**/*.properties") {
+    filter { it.replace("@spring.profiles.active@", springProfilesActive) }
+  }
+}
+
 // jhipster-needle-gradle-free-configuration-blocks
 
 tasks.test {
@@ -260,7 +273,6 @@ val integrationTest = task<Test>("integrationTest") {
   filter {
     includeTestsMatching("**IT*")
     includeTestsMatching("**CucumberTest*")
-    excludeTestsMatching("**Test*")
   }
   useJUnitPlatform()
 }
